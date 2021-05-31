@@ -1,39 +1,39 @@
-package co.yedam.emp;
+package homework;
 
 import java.util.Scanner;
 
-import co.yedam.test.Exam06;
-
 public class EmployeeAppMain {
-public static void main(String[] args) {
-	EmployeeApp app = new EmployeeApp();
-	Scanner scanner = new Scanner(System.in);
-	int selectNo = 0;
-	boolean run = true;
 
-	while (run) {
-		System.out.println("1.ì‚¬ì›ìˆ˜  2.ì‚¬ì›ì •ë³´ìž…ë ¥  3.ì‚¬ì›ë¦¬ìŠ¤íŠ¸  4.ê²€ìƒ‰  5.ê¸‰ì—¬í•©ê³„   6.ì¢…ë£Œ");
-		System.out.print("ì„ íƒ>");
-		selectNo = scanner.nextInt();
-		if (selectNo == 1) {
-			app.init();
-		} else if (selectNo == 2) {
-			app.input();
-		} else if (selectNo == 3) {
-			app.print();
-		} else if (selectNo == 4) {
-			System.out.print("ê²€ìƒ‰í•  ì‚¬ë²ˆ>");
-			int no = scanner.nextInt();
-			String name = app.search(no);
-			System.out.println("ì´ë¦„ì€ "+ name);
-		}else if (selectNo == 4) {
-			int s = app.sum();
-			System.out.println("ê¸‰ì—¬í•©ê³„ = " + s);
-		} else if (selectNo == 5) {
-			run = false;
+	public static void main(String[] args) {
+		EmployeeApp app = new EmployeeApp();
+		Scanner scanner = new Scanner(System.in);
+		int selectNo = 0;
+		boolean run = true;
+
+		while (run) {
+			System.out.println("1.»ç¿ø¼ö  2.»ç¿øÁ¤º¸ÀÔ·Â  3.»ç¿ø¸®½ºÆ®  4.°Ë»ö  5.±Þ¿©ÇÕ°è   6.Á¾·á");
+			System.out.print("¼±ÅÃ>");
+			selectNo = scanner.nextInt();
+			if (selectNo == 1) {
+				app.init();
+			} else if (selectNo == 2) {
+				app.input();
+			} else if (selectNo == 3) {
+				app.printList();
+			} else if (selectNo == 4) {
+				System.out.print("°Ë»öÇÒ »ç¹ø>");
+				
+				String name = app.search();
+				System.out.println("ÀÌ¸§Àº "+ name);
+			}else if (selectNo == 4) {
+				int s = app.sum();
+				System.out.println("±Þ¿©ÇÕ°è = " + s);
+			} else if (selectNo == 5) {
+				run = false;
+			}
 		}
+		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		scanner.close();
 	}
-	System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
-	scanner.close();
-}
+	
 }
